@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faktöriyel Hesapla</title>
+</head>
+<body>
+  <input type="text" id="inputNumber" placeholder="Bir sayı girin">
+  <button onclick="calculate()">Hesapla</button>
+  <div id="result"></div>
+
+  <script>
+    function calculate() {
+      let n = parseInt(document.getElementById('inputNumber').value, 10);
+      let fakt = 1;
+
+      while (n > 0) {
+        fakt *= n--;
+      }
+
+      document.getElementById('result').innerText = "Sonuç: " + fakt;
+    }
+  </script>
+</body>
+</html>
