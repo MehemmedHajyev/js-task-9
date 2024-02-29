@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigInt Hesaplama</title>
+</head>
+<body>
+  <input type="text" id="input1" placeholder="Birinci sayıyı girin">
+  <input type="text" id="input2" placeholder="İkinci sayıyı girin">
+  <button onclick="hesapla()">Hesapla</button>
+  <div id="sonuc"></div>
+
+  <script>
+    function hesapla() {
+      let a = BigInt(document.getElementById('input1').value);
+      let b = BigInt(document.getElementById('input2').value);
+      let ans = a * a + b * b;
+      document.getElementById('sonuc').innerText = ans.toString();
+    }
+  </script>
+</body>
+</html>
