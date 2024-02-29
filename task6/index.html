@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayı Tekrar Kontrolü</title>
+</head>
+<body>
+  <textarea id="numberInput" rows="4" cols="50" placeholder="Float sayıları girin, boşlukla ayırın"></textarea>
+  <button onclick="checkNumbers()">Kontrol Et</button>
+  <div id="result"></div>
+
+  <script>
+    function checkNumbers() {
+      let inputString = document.getElementById('numberInput').value;
+      let inputsInString = inputString.split(" ");
+      let inputsInFloat = [];
+      
+      for (const elm of inputsInString) {
+        if (elm.trim() !== "") {
+          inputsInFloat.push(parseFloat(elm));
+        }
+      }
+
+      let count = 0;
+      for (let i = 0; i < inputsInFloat.length; i++) {
+        for (let j = 0; j < inputsInFloat.length; j++) {
+          if (inputsInFloat[j] == inputsInFloat[i]) {
+            count++;
+          }
+        }
+        if (count != 2) {
+          if (count == 4) {
+            document.getElementById('result').innerText = "YES";
+          } else {
+            document.getElementById('result').innerText = "NO";
+          }
+          return;
+        }
+        count = 0;
+      }
+      document.getElementById('result').innerText = "YES";
+    }
+  </script>
+</body>
+</html>
