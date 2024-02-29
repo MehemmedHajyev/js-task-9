@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karakter Karşılaştırma</title>
+</head>
+<body>
+  <input type="text" id="textInput" placeholder="Bir karakter dizisi girin">
+  <button onclick="compare()">Karşılaştır</button>
+  <div id="result"></div>
+
+  <script>
+    function compare() {
+      let str = document.getElementById('textInput').value;
+      let result;
+
+      if (+str[0] > str[2]) {
+        result = str[0];
+      } else if (+str[0] == str[2]) {
+        result = "=";
+      } else {
+        result = str[2];
+      }
+
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+</body>
+</html>
