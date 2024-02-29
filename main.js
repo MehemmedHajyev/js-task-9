@@ -1,3 +1,11 @@
+// Verilmiş üçrəqəmli ədədi rəqəmlərinə ayırın.
+
+// Giriş verilənləri
+// Yeganə sətirdə üçrəqəmli tam ədəd (müsbət və ya mənfi) verilir.
+
+// Çıxış verilənləri
+// Hər bir rəqəmi nümunədə verildiyi kimi ayrı sətirdə çap edin.
+
 let addValue = document.querySelector('.add-value')
 let calckBtn = document.querySelector('.calck-btn')
 let result = document.querySelector('.result')
