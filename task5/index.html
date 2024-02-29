@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İkinci Dereceden Denklem Kökleri</title>
+</head>
+<body>
+  <input type="text" id="inputA" placeholder="a">
+  <input type="text" id="inputB" placeholder="b">
+  <input type="text" id="inputC" placeholder="c">
+  <button onclick="calculate()">Hesapla</button>
+  <div id="result"></div>
+
+  <script>
+    function calculate() {
+      let a = parseInt(document.getElementById('inputA').value, 10);
+      let b = parseInt(document.getElementById('inputB').value, 10);
+      let c = parseInt(document.getElementById('inputC').value, 10);
+      
+      let disc = b * b - 4 * a * c;
+      let result;
+
+      if (disc == 0) {
+        let x = (-b) / (2 * a);
+        result = "Tek kök: " + x;
+      } else if (disc < 0) {
+        result = "Kök yok";
+      } else {
+        let x1 = (-1 * b - Math.sqrt(disc)) / (2 * a);
+        let x2 = (-1 * b + Math.sqrt(disc)) / (2 * a);
+
+        if (x1 < x2) {
+          result = "İki kök: " + x1 + ", " + x2;
+        } else {
+          result = "İki kök: " + x2 + ", " + x1;
+        }
+      }
+
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+</body>
+</html>
